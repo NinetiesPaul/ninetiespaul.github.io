@@ -1485,6 +1485,13 @@ p {
     background-color: #fff; }
 
 /*===========================
+      19.produtos css 
+===========================*/
+.produtos-area {
+  padding-top: 90px;
+  padding-bottom: 100px; }
+  
+/*===========================
       19.portfolio css 
 ===========================*/
 .portfolio-area {
