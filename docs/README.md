@@ -1,1 +1,3 @@
-Reading from README
+## My Portfolio site
+
+Paul Richard, PHP developer, at your services
