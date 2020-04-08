@@ -9,47 +9,15 @@
         <link href="../includes/css/datatables.css" rel="stylesheet">
         <script src="../includes/js/jquery.js"></script>
         <script>
-        function verificarLogin(val) {
-            $.ajax({
-                type: "POST",
-                url: "/webschool/verificarLogin",
-                data: { login : val, tipo : "professor" },
-                success: function(data){
-                    if (data == 1){
-                        $("#disponibilidade").show();
-                        $("#btn").attr("disabled", true)
-                    } else {
-                        $("#disponibilidade").hide();
-                        $("#btn").attr("disabled", false)
-                    }
-                    console.log(data);
-                }
-            });
-        }
-            
         function deletarProfessor(val) {
-            $.ajax({
-                url: "professor/" + val + '/delete',
-                type: "DELETE",
-                success: function(data){
-                    /* $('#row-'+val).fadeOut(400, function(){
-                        remove();
-                    });
-                    console.log(data); */
-                }
+            $('#row-'+val).fadeOut(400, function(){
+                remove();
             });
         }
             
         function deletarDisciplinaPorProfessor(val) {
-            $.ajax({
-                url: "professorPorMateria/" + val ,
-                type: "DELETE",
-                success: function(data){
-                    $('#row-dpp-'+val).fadeOut(400, function(){
-                        remove();
-                    });
-                    console.log(data);
-                }
+            $('#row-dpp-'+val).fadeOut(400, function(){
+                remove();
             });
         }
 
@@ -59,14 +27,6 @@
 
         $(document).on('click', '#deletar-dpp', function(){
             deletarDisciplinaPorProfessor(this.value);
-        });
-
-        $(document).on('focusout', '#email', function(){
-            verificarLogin(this.value);
-        });
-
-        $(document).ready(function(){
-            $("#disponibilidade").hide();
         });
         
         $(document).ready( function () {
@@ -91,8 +51,8 @@
                             Logado como admin
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="home">Home</a>
-                            <a class="dropdown-item" href="../logout">Sair</a>
+                            <a class="dropdown-item" href="index.html">Home</a>
+                            <a class="dropdown-item" href="../index.html">Sair</a>
                             <!-- <a class="dropdown-item" href="#">Another action</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a> -->
@@ -116,9 +76,6 @@
                         <label for="email" class="col-form-label col-md-2 col-form-label-sm ">Login:</label>
                         <div class="col-md-3">
                             <input type="text" name="email" id="email" class="form-control form-control-sm" aria-describedby="disponibilidade" required>
-                            <small id="disponibilidade">
-                                Login em uso!
-                            </small>
                         </div>
                     </div>
                     <div class="form-group row justify-content-center ">
@@ -127,7 +84,7 @@
                             <input type="password" name="password" class="form-control form-control-sm" required>
                         </div>
                     </div>
-                    <button type="submit" id="btn" class="btn btn-primary btn-sm"><span class='glyphicon glyphicon-plus'></span> Cadastrar</button>
+                    <a href="professores.html" type="submit" id="btn" class="btn btn-primary btn-sm"><span class='glyphicon glyphicon-plus'></span> Cadastrar</a>
                 </form>
 
                 <p><strong>Lista de Professores</strong></p>
@@ -137,7 +94,54 @@
                         <tr><td>Nome</td><td>Status</td><td>Editar</td><td>Remover</td></tr>
                     </thead>
                     <tbody>
-                        {PROFESSORES}
+                        <tr id='row-1'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='1'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-2'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='2'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-3'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='3'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-4'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='4'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-5'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='5'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-6'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='6'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-7'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='7'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-8'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='8'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-9'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='9'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-10'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='10'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-11'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='11'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
+                        <tr id='row-12'><td>Professor</td>
+                            <td><span class='glyphicon glyphicon-ok'></span> </td><td><a href='professor.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a> </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar' value='12'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                        </tr>
                     </tbody>
                 </table>
                 
@@ -148,7 +152,18 @@
                         <label for="professor" class="col-form-label col-md-2 col-form-label-sm ">Professor:</label>
                         <div class="col-md-3">
                             <select name="professor" class="form-control form-control-sm">
-                                {PROFESSORES_SELECT}
+                                <option value='8'>Professor 1</option>
+                                <option value='8'>Professor 2</option>
+                                <option value='8'>Professor 3</option>
+                                <option value='8'>Professor 4</option>
+                                <option value='8'>Professor 5</option>
+                                <option value='8'>Professor 6</option>
+                                <option value='8'>Professor 7</option>
+                                <option value='8'>Professor 8</option>
+                                <option value='8'>Professor 9</option>
+                                <option value='8'>Professor 10</option>
+                                <option value='8'>Professor 11</option>
+                                <option value='8'>Professor 12</option>
                             </select>
                         </div>
                     </div>
@@ -156,7 +171,7 @@
                         <label for="disciplina" class="col-form-label col-md-2 col-form-label-sm">Disciplina:</label>
                         <div class="col-md-3" >
                             <select name="disciplina" class="form-control form-control-sm">
-                                {DISCIPLINAS_SELECT}
+                                <option value='2'>Matemática</option><option value='3'>Português</option><option value='5'>Ed. Física</option><option value='6'>Geografia</option>
                             </select>
                         </div>
                     </div>
@@ -164,11 +179,11 @@
                         <label for="turma" class="col-form-label col-md-2 col-form-label-sm">Turma:</label>
                         <div class="col-md-3">
                             <select name="turma" class="form-control form-control-sm">
-                                {TURMAS_SELECT}
+                                <option value='2'>1 º Série </option><option value='3'>2 º Série </option><option value='4'>3 º Série </option>
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-sm"><span class='glyphicon glyphicon-plus'></span> Cadastrar</button><br/>
+                    <a href="professores.html" type="submit" class="btn btn-primary btn-sm"><span class='glyphicon glyphicon-plus'></span> Cadastrar</a><br/>
                 </form>
 
                 <strong>Lista de Professor por Disciplina de Turma</strong><p/>
@@ -178,7 +193,9 @@
                         <tr><td>Professor</td><td>Disciplina</td><td>Turma</td><td>Remover</td></tr>
                     </thead>
                     <tbody>
-                        {DISCIPLINAS_POR_PROFESSOR}
+                        <tr id='row-dpp-1'><td>Professor 1</td>
+                            <td>Matemática</td><td>1 º Série </td>
+                            <td><button class='btn btn-danger btn-sm' id='deletar-dpp' value='1'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td></tr>
                     </tbody>
                 </table>
             </div>

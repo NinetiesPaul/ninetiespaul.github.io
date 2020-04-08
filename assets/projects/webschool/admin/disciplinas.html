@@ -9,14 +9,8 @@
         <script src="../includes/js/jquery.js"></script>
         <script>
         function deletarDisciplina(val) {
-            $.ajax({
-                url: "disciplina/" + val + '/delete',
-                type: "DELETE",
-                success: function(data){
-                    $('#row-'+val).fadeOut(400, function(){
-                        remove();
-                    });
-                }
+            $('#row-'+val).fadeOut(400, function(){
+                remove();
             });
         }
 
@@ -36,8 +30,8 @@
                             Logado como admin
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="home">Home</a>
-                            <a class="dropdown-item" href="../../logout">Sair</a>
+                            <a class="dropdown-item" href="index.html">Home</a>
+                            <a class="dropdown-item" href="../index.html">Sair</a>
                             <!-- <a class="dropdown-item" href="#">Another action</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a> -->
@@ -65,7 +59,42 @@
 
                 
                 <table style="margin-left: auto; margin-right: auto; font-size: 13; width: auto !important;" class="table">
-                    {DISCIPLINAS}
+                    <tr id='row-2'><td>Matemática</td>
+                        <td><a href='disciplina.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a></td>
+                        <td><button class='btn btn-danger btn-sm' id='deletar' value='2'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                    </tr>
+                    <tr id='row-3'><td>Português</td>
+                        <td><a href=disciplina.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a></td>
+                        <td><button class='btn btn-danger btn-sm' id='deletar' value='3'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                    </tr>
+                    <tr id='row-5'><td>Ed. Física</td>
+                        <td><a href='disciplina.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a></td>
+                        <td><button class='btn btn-danger btn-sm' id='deletar' value='5'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                    </tr>
+                    <tr id='row-6'><td>Geografia</td>
+                        <td><a href='disciplina.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a></td>
+                        <td><button class='btn btn-danger btn-sm' id='deletar' value='6'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                    </tr>
+                    <tr id='row-7'><td>História</td>
+                        <td><a href='disciplina.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a></td>
+                        <td><button class='btn btn-danger btn-sm' id='deletar' value='7'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                    </tr>
+                    <tr id='row-8'><td>Inglês</td>
+                        <td><a href='disciplina.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a></td>
+                        <td><button class='btn btn-danger btn-sm' id='deletar' value='8'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                    </tr>
+                    <tr id='row-9'><td>Química</td>
+                        <td><a href='disciplina.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a></td>
+                        <td><button class='btn btn-danger btn-sm' id='deletar' value='9'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                    </tr>
+                    <tr id='row-10'><td>Física</td>
+                        <td><a href='disciplina.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a></td>
+                        <td><button class='btn btn-danger btn-sm' id='deletar' value='10'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                    </tr>
+                    <tr id='row-11'><td>materia</td>
+                        <td><a href='disciplina.html' class='btn btn-info btn-sm btn-sm'><span class='glyphicon glyphicon-edit'></span> Editar</a></td>
+                        <td><button class='btn btn-danger btn-sm' id='deletar' value='11'><span class='glyphicon glyphicon-remove'></span> Deletar</button></td>
+                    </tr>
                 </table>
             </div>
         </div>
