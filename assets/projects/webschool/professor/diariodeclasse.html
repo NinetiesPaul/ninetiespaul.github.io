@@ -1,0 +1,213 @@
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="UTF8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="../includes/css/glyphicons.css" rel="stylesheet">
+        <link href="../includes/css/css.css" rel="stylesheet">
+        <link href="../includes/css/navbar.css" rel="stylesheet">
+        <script src="../includes/js/jquery.js"></script>
+        <script>
+            function mockData() {
+                $("#search").removeClass('disabled');
+                $("#result").html("<p/><table style='margin-left: auto; margin-right: auto; font-size: 13;' class='table table-striped table-responsive'><thead class='thead-dark'><tr><th scope='col'>  </th><th scope='col'>01</th><th scope='col'>02</th><th scope='col'>03</th><th scope='col'>04</th><th scope='col'>05</th><th scope='col'>06</th><th scope='col'>07</th><th scope='col'>08</th><th scope='col'>09</th><th scope='col'>10</th><th scope='col'>11</th><th scope='col'>12</th><th scope='col'>13</th><th scope='col'>14</th><th scope='col'>15</th><th scope='col'>16</th><th scope='col'>17</th><th scope='col'>18</th><th scope='col'>19</th><th scope='col'>20</th><th scope='col'>21</th><th scope='col'>22</th><th scope='col'>23</th><th scope='col'>24</th><th scope='col'>25</th><th scope='col'>26</th><th scope='col'>27</th><th scope='col'>28</th><th scope='col'>29</th><th scope='col'>30</th></tr></thead><tbody><tr><td>Aluno 1</td><td><a href='#' id='presenca-2020_04_01_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_01_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_02_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_02_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_03_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_03_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_04_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_04_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_05_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_05_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_06_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_06_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_07_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_07_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_08_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_08_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_09_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_09_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_10_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_10_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_11_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_11_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_12_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_12_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_13_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_13_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_14_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_14_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_15_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_15_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_16_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_16_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_17_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_17_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_18_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_18_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_19_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_19_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_20_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_20_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_21_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_21_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_22_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_22_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_23_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_23_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_24_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_24_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_25_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_25_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_26_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_26_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_27_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_27_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_28_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_28_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_29_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_29_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td><td><a href='#' id='presenca-2020_04_30_1035_10_3' class='alterar-presenca'><span class='glyphicon glyphicon-remove'></span></a> <a href='#' id='comentario-2020_04_30_1035_10_3' class='comentarios' data-toggle='modal' data-target='#modalExemplo' ><span class='glyphicon glyphicon-comment'></span></a></td></tr></tbody></table>");
+            }
+
+            function alterarFrequencia(dados) {
+
+            }
+
+            function visualizarComentarios(dados) {
+ 
+            }
+
+            function deletarComentario(comentario) {
+             
+            }
+
+            function deletarArquivo(arquivo) {
+               
+            }
+
+            $(document).on('click', '.alterar-presenca', function(){
+                alterarFrequencia();
+            });
+
+            $(document).on('click', '.comentarios', function(){
+                visualizarComentarios();
+                $("#dado").val();
+            });
+
+            $(document).on('click', '.deletar-comentario', function(){
+               deletarComentario(); 
+            });
+
+            $(document).on('click', '.deletar-arquivo', function(){
+               deletarArquivo(); 
+            });
+
+            $(document).on('click', '#erase-fields', function(){    
+                $("#dado").val('');
+                $("#comentario").val('');
+                $("#file_btn").val('');
+            });
+
+            $(document).ready(function(){
+                var date = new Date();
+                mes = 4;
+                ano = 2020;
+
+                $("#ano option").each(function(){
+                    if ($(this).val() == ano) {
+                        $(this).attr('selected', true);
+                    }
+                });
+
+                $("#mes option").each(function(){
+                    if ($(this).val() == mes) {
+                        $(this).attr('selected', true);
+                    }
+                });
+
+                $("#search").click(function(){
+                    if ($("#search").hasClass('disabled') === false) {
+                        $("#search").addClass('disabled');
+                        $("#result").html('Pesquisando');
+                        setTimeout(mockData, 2000);
+                    }
+                });
+
+                $("#anexar").click(function(){
+                    $("#file_btn").click();
+                });
+
+                $("#form-comentario").on('submit', (function(e){
+                    e.preventDefault();
+                }));
+            });
+        </script>
+        <title>Professor :: Home Page</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="index.html">webSchool</a>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Logado como Professor
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="index.html">Home</a>
+                            <a class="dropdown-item" href="../perfil.html">Meu perfil</a>
+                            <a class="dropdown-item" href="../index.html">Sair</a>
+                            <!-- <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a> -->
+                        </div>
+                    </li>      
+
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="jumbotron text-center">
+                <strong>Diário de Classe</strong><p/>
+                
+                <input type="hidden" id="disc" value='{DISCIPLINA}' />
+                <input type="hidden" id="turma" value='{TURMA}' />
+                <input type="hidden" id="context" value='professor' />
+                
+                <br/><select id="ano">
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select>
+                
+                <select id="mes">
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select><p/>
+                
+                <button class="btn btn-primary btn-sm" id="search" ><span class='glyphicon glyphicon-search'></span> Pesquisar</button>
+                
+                <div id="result" >
+                    Selecione o mês e ano para pesquisar a frequencia da turma.
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><strong>Comentários em classe</strong></h5>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="post" role="form" class="form-horizontal" id="form-comentario">
+                            <input type="hidden" name="dado" id="dado" value="" />
+                            <div class="form-group row justify-content-center ">
+                                <textarea name="comentario" id="comentario" rows="5" cols="40"> </textarea>
+                            </div>
+                            <div class="form-group row justify-content-center">
+                                <div class="col-md-3">
+                                    <a href="#" class="btn btn-sm btn-primary" id="anexar"> <span class='glyphicon glyphicon-paperclip'></span> Anexar arquivo</a>
+                                    <input type='file' style="display: none;" id="file_btn" name="file_btn" />
+                                </div>
+                            </div>
+                            <div class="form-group row justify-content-center">
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-primary btn-sm"><span class='glyphicon glyphicon-plus'></span> Adicionar</button>
+                                </div>
+                            </div>
+                        <form>
+                        <div id="result-modal">
+                            <table style="margin-left: auto; margin-right: auto; font-size: 13;" class="table" id="tabela-comentarios">
+                                <thead>
+                                    <tr>
+                                        <th>Comentário</th><th colspan='2'>Arquivos anexados</th><th>Deletar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Respondeu professor de forma grosseira</td><td colspan='2'>Essa observação não contem arquivos anexados</td><td>Deletar</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fez gesto desrespeitoso para o professor</td><td>Arquivo anexado</td><td>Link para deletar arquivo</td><td>Deletar</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="erase-fields">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>	
+    </body>
+</html>
