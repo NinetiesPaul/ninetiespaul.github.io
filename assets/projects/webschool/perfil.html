@@ -10,30 +10,6 @@
         <script src="includes/js/detect.js"></script>
         <script src="includes/js/back.js"></script>
         <script>
-            function verificarLogin(email, tipo, id) {
-                $.ajax({
-                    type: "POST",
-                    url: "/webschool/verificarLogin",
-                    data:'login='+email+'&tipo='+tipo+'&id='+id,
-                    success: function(data ){
-                        console.log(data);
-                        if (data == 1){
-                            $("#disponibilidade").show();
-                            $("#atualizar").attr("disabled", true);
-                        } else {
-                            $("#disponibilidade").hide();
-                            $("#atualizar").attr("disabled", false);
-                        }
-                    }
-                });
-            }
-            
-            $(document).on('focusout', '#email', function(){
-                email = $("#email").val();
-                tipo = $("#tipo").val();
-                id = $("#usuario").val();
-                verificarLogin(email, tipo, id);
-            });
             
             $(document).ready(function(){
                 $(".contato").hide();
@@ -104,7 +80,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">webSchool</a>
+            <a class="navbar-brand" href="index.html">webSchool</a>
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
@@ -112,7 +88,7 @@
                             Logado como Usuário
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Home</a>
+                            <a class="dropdown-item" href="index.html">Home</a>
                             <a class="dropdown-item" href="index.html">Sair</a>
                             <!-- <a class="dropdown-item" href="#">Another action</a>
                             <div class="dropdown-divider"></div>
@@ -131,11 +107,10 @@
                 <a href="#" class="enderecoBotao btn btn-secondary">Endereço</a>
                 <div class="foto">
 
-                {AVATAR}
+                <img src='default_avatar.jpg' />
                 <br/>
-                {MSG}
 
-                <form action="atualizarPerfil" method="post" enctype="multipart/form-data" role="form" class="form-horizontal">
+                <form action="" method="post" enctype="multipart/form-data" role="form" class="form-horizontal">
                     <input type="hidden" name="_method" value="PUT" />
                     <input type="hidden" name="tipo_update" value="avatar">
                     <input type="hidden" name="usuario" value="{ID}">
@@ -152,7 +127,7 @@
 
                 <div class="contato">
 
-                    <form action="atualizarPerfil" method="post" role="form" class="form-horizontal">
+                    <form action="" method="post" role="form" class="form-horizontal">
                         <input type="hidden" name="_method" value="PUT" />
                         <input type="hidden" name="tipo" id="tipo" value="{TIPO}">
                         <input type="hidden" name="tipo_update" value="usuario">
@@ -162,13 +137,13 @@
                         <div class="form-group row justify-content-center">
                             <label for="nome" class="col-form-label col-md-2 col-form-label-sm">Nome:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control form-control-sm" name="nome" value="{NOME}" >
+                                <input type="text" class="form-control form-control-sm" name="nome" value="Seu nome" >
                             </div>
                         </div>
                         <div class="form-group row justify-content-center">
                             <label for="email" class="col-form-label col-md-2 col-form-label-sm">E-Mail:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control form-control-sm" aria-describedby="disponibilidade" name="email" id="email" value="{EMAIL}" >
+                                <input type="text" class="form-control form-control-sm" aria-describedby="disponibilidade" name="email" id="email" value="mail@mail.com" >
                                 <small id="disponibilidade">
                                     Login em uso!
                                 </small>
@@ -184,13 +159,13 @@
                         <div class="form-group row justify-content-center">
                             <label for="tel1" class="col-form-label col-md-2 col-form-label-sm">Telefone 1:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control form-control-sm " name="telefone1" value="{TELEFONE1}">
+                                <input type="text" class="form-control form-control-sm " name="telefone1" value="1122225566">
                             </div>
                         </div>
                         <div class="form-group row justify-content-center">
                             <label for="tel2" class="col-form-label col-md-2 col-form-label-sm">Telefone  2:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control form-control-sm " name="telefone2" value="{TELEFONE2}" >
+                                <input type="text" class="form-control form-control-sm " name="telefone2" value="11955664488" >
                             </div>
                         </div>
 
@@ -200,7 +175,7 @@
                 </div>
                 <div class="endereco">
 
-                    <form action="atualizarPerfil" method="post" role="form" class="form-horizontal">
+                    <form action="" method="post" role="form" class="form-horizontal">
                         <input type="hidden" name="_method" value="PUT" />
                         <input type="hidden" name="tipo_update" value="endereco">
                         <input type="hidden" name="id" value="{ENDERECO_ID}">
@@ -208,42 +183,42 @@
                         <div class="form-group row justify-content-center">
                             <label for="rua" class="col-form-label col-md-2 col-form-label-sm">Rua:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control form-control-sm" name="rua" value="{ENDERECO_RUA}" >
+                                <input type="text" class="form-control form-control-sm" name="rua" value="Rua dos Novatos" >
                             </div>
                         </div>
 
                         <div class="form-group row justify-content-center">
                             <label for="numero" class="col-form-label col-md-2 col-form-label-sm">Número:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control form-control-sm" name="numero" value="{ENDERECO_NUMERO}" >
+                                <input type="text" class="form-control form-control-sm" name="numero" value="55" >
                             </div>
                         </div>
 
                         <div class="form-group row justify-content-center">
                             <label for="bairro" class="col-form-label col-md-2 col-form-label-sm">Bairro:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control form-control-sm" name="bairro" value="{ENDERECO_BAIRRO}" >
+                                <input type="text" class="form-control form-control-sm" name="bairro" value="Centro" >
                             </div>
                         </div>
 
                         <div class="form-group row justify-content-center">
                             <label for="cep" class="col-form-label col-md-2 col-form-label-sm">CEP:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control form-control-sm" name="cep" value="{ENDERECO_CEP}" >
+                                <input type="text" class="form-control form-control-sm" name="cep" value="13000-500" >
                             </div>
                         </div>
 
                         <div class="form-group row justify-content-center">
                             <label for="complemento" class="col-form-label col-md-2 col-form-label-sm">Complemento:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control form-control-sm" name="complemento" value="{ENDERECO_COMPLEMENTO}" >
+                                <input type="text" class="form-control form-control-sm" name="complemento" value="Próximo ao Supermercado Dia" >
                             </div>
                         </div>
 
                         <div class="form-group row justify-content-center">
                             <label for="cidade" class="col-form-label col-md-2 col-form-label-sm">Cidade:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control form-control-sm" name="cidade" value="{ENDERECO_CIDADE}" >
+                                <input type="text" class="form-control form-control-sm" name="cidade" value="Campinas" >
                             </div>
                         </div>
 
@@ -251,9 +226,9 @@
                             <label for="estado" class="col-form-label col-md-2 col-form-label-sm">Estado:</label>
                             <div class="col-md-3">
                                 <select name="estado" class="form-control form-control-sm" aria-describedby="avisoEstado">
-                                    {ESTADOS}
+                                    <option value='1'>Acre</option><option value='2'>Alagoas</option><option value='3'>Amapa</option><option value='4'>Amazonas</option><option value='5'>Bahia</option><option value='6'>Ceara</option><option value='7'>Distrito Federal</option><option value='8'>Espirito Santo</option><option value='9'>Goias</option><option value='10'>Maranhao</option><option value='11'>Mato Grosso</option><option value='12'>Mato Grosso do Sul</option><option value='13'>Minas Gerais</option><option value='14'>Para</option><option value='15'>Paraiba</option><option value='16'>Parana</option><option value='17'>Pernambuco</option><option value='18'>Piaui</option><option value='19'>Rio de Janeiro</option><option value='20'>Rio Grande do Norte</option><option value='21'>Rio Grande do Sul</option><option value='22'>Rondonia</option><option value='23'>Roraima</option><option value='24'>Santa Catarina</option><option value='25'>Sao Paulo</option><option value='26'>Sergipe</option><option value='27'>Tocantins</option>
                                 </select> 
-                                <small id="avisoEstado" class="form-text text-muted">Atualmente reside em ({ESTADO_ATUAL})</small>
+                                <small id="avisoEstado" class="form-text text-muted">Atualmente reside em (São Paulo)</small>
                             </div>
                         </div>
 

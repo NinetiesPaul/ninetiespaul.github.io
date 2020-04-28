@@ -9,47 +9,16 @@
         <script src="../includes/js/jquery.js"></script>
         <script src="../includes/js/detect.js"></script>
         <script>
-        function pesquisarFaltas(aluno,turma,disciplina) {
-            $.ajax({
-                type: "POST",
-                url: "../../pesquisarFaltas",
-                data:'aluno='+aluno+'&turma='+turma+'&disciplina='+disciplina,
-                success: function(data ){
-                    $("#result").html(data);
-                }
-            });
-        }
 
         $(document).ready(function(){
             $(".faltas").click(function(){
-                dado = this.id;
-                dado = dado.split('.');
-                aluno = dado[0];
-                turma = dado[1];
-                disciplina = dado[2];
-                pesquisarFaltas(aluno,turma,disciplina);
 
             });
 
             $(".boletim").click(function(){
-                $("#gerarDocumento").attr('action', '../../gerarBoletim');
-                dado = this.id;
-                dado = dado.split('.');
-                aluno = dado[0];
-                turma = dado[1];
-                console.log(dado);
-                $("#aluno-pdf").val(aluno);
-                $("#turma-pdf").val(turma);
-                $("#gerarDocumento").submit();
             });
 
             $(".historico").click(function(){
-                aluno = this.id;
-                console.log(aluno);
-                $("#aluno-pdf").val(aluno);
-                $("#turma-pdf").val('');
-                $("#gerarDocumento").attr('action', '../../gerarHistorico');
-                $("#gerarDocumento").submit();
             });
         });
         </script>
@@ -57,7 +26,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="../home">webSchool</a>
+            <a class="navbar-brand" href="index.html">webSchool</a>
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
@@ -65,12 +34,12 @@
                             Logado como Responsavel
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../home">Home</a>
-                            <a class="dropdown-item" href="../../perfil">Perfil</a>
+                            <a class="dropdown-item" href="index.html">Home</a>
+                            <a class="dropdown-item" href="../perfil.html">Perfil</a>
                             <!-- <a class="dropdown-item" href="#">Another action</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a> -->
-                            <a class="dropdown-item" href="..">Sair</a>
+                            <a class="dropdown-item" href="index.html">Sair</a>
                             <!-- <a class="dropdown-item" href="#">Another action</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a> -->
@@ -82,17 +51,333 @@
 
         <div class="container">
             <div class="jumbotron text-center">
-                <form action="" method="post" role="form" class="form-horizontal " style="display: none;" id="gerarDocumento">
-                    <input type="hidden" name="aluno-pdf" id="aluno-pdf" value="" />
-                    <input type="hidden" name="turma-pdf" id="turma-pdf" value="" />
-                    <input type="hidden" name="document-type-pdf" id="document-type-pdf" value="" />
-                </form>
                 
                 <a href='#' class='historico' id="{ALUNOID_USERID}">Baixar histórico completo do aluno</a> <p/>
 
                 <strong>Detalhes do Aluno</strong><p/>
 
-                {NOTAS}
+                1º Série   (<b>atual</b>) <button class='btn btn-sm btn-info boletim' id=>
+                    <span class='glyphicon glyphicon-save-file'></span> Baixar boletim</a>
+                </button><br/><table style='margin-left: auto; margin-right: auto; font-size: 13;' class='table'>
+            <thead><tr><th></th><th>Nota 1</th><th>Rec. 1</th><th>Nota 2</th><th>Rec. 2</th><th>Nota 3</th><th>Rec. 3</th><th>Nota 4</th><th>Rec. 4</th><th></th></tr></thead><tbody><tr><td>Matemática</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Português</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Ed. Física</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Geografia</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>História</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Inglês</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Química</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Física</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr></tbody></table>2º Série  <button class='btn btn-sm btn-info boletim' id='970.3'>
+                    <span class='glyphicon glyphicon-save-file'></span> Baixar boletim</a>
+                </button><br/><table style='margin-left: auto; margin-right: auto; font-size: 13;' class='table'>
+            <thead><tr><th></th><th>Nota 1</th><th>Rec. 1</th><th>Nota 2</th><th>Rec. 2</th><th>Nota 3</th><th>Rec. 3</th><th>Nota 4</th><th>Rec. 4</th><th></th></tr></thead><tbody><tr><td>Matemática</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Português</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Ed. Física</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Geografia</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>História</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Inglês</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Química</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Física</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr></tbody></table>3º Série  <button class='btn btn-sm btn-info boletim' id='970.4'>
+                    <span class='glyphicon glyphicon-save-file'></span> Baixar boletim</a>
+                </button><br/><table style='margin-left: auto; margin-right: auto; font-size: 13;' class='table'>
+            <thead><tr><th></th><th>Nota 1</th><th>Rec. 1</th><th>Nota 2</th><th>Rec. 2</th><th>Nota 3</th><th>Rec. 3</th><th>Nota 4</th><th>Rec. 4</th><th></th></tr></thead><tbody><tr><td>Matemática</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Português</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Ed. Física</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Geografia</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>História</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Inglês</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Química</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr><tr><td>Física</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class='btn btn-sm btn-info faltas' data-toggle='modal' data-target='#modalExemplo' id=''>
+                        <span class='glyphicon glyphicon-eye-open'></span> Diario de Classe
+                    </button>
+                </td></tr></tbody></table>
 
             </div>
         </div>
@@ -109,7 +394,9 @@
               </div>
               <div class="modal-body">
                 <div id="result">
-                    Resultado aqui.
+                    Este aluno possui 0 falta(s) nesta matéria.<p/>
+
+                    Este aluno possui 0 comentários(s) por professores:
                 </div>
               </div>
               <div class="modal-footer">
