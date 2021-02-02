@@ -13,6 +13,11 @@
                 $('#tipo').change(function () {
                     $('#login').attr('action', $('#tipo').val())
                 })
+
+                $('#confirmBtn').click(function () {
+
+                    location.href = $('#tipo').val()
+                })
             });
         </script>
     </head>
@@ -28,7 +33,7 @@
             <h3>Bem-vindo</h3>
 
             <div class="login">
-                <form action="" id="login" method="POST" class="form-signin">
+                <form action="" id="login" method="GET" class="form-signin">
                     <input type="text" name="email" placeholder="Digite seu login" class="form-control" >
                     <input type="password" name="password" placeholder="Digite sua senha" class="form-control" >
                         <select name="tipo" id="tipo" class="form-control" required>
@@ -38,7 +43,7 @@
                             <option value='responsavel/index.html'>Responsavel</option>
                             <option value='aluno/index.html'>Aluno</option>
                         </select><br/>
-                    <input type="submit" value="Login" class="btn btn-lg btn-primary btn-block" ><br/>
+                    <input type="button" value="Login" id="confirmBtn" class="btn btn-lg btn-primary btn-block" ><br/>
                 </form>
             </div>
         </div>
