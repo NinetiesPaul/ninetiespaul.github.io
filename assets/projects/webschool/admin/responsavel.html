@@ -2,9 +2,11 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta charset="UTF8">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link href="../includes/css/glyphicons.css" rel="stylesheet">
         <link href="../includes/css/navbar.css" rel="stylesheet">
+        <link href="../includes/css/datatables.css" rel="stylesheet">
         <script src="../includes/js/jquery.js">
         </script>
         <script>
@@ -17,6 +19,16 @@
 
         $(document).on('click', '#deletar', function(){
             deletarResponsavelPorAluno(this.value);
+        });
+
+        $(document).ready(function(){
+
+            $('#tableAlunos').DataTable({
+                "paging": true,
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"
+                }
+            });
         });
 
         </script>
@@ -85,6 +97,8 @@
                     <a href="responsavel.html" type="submit" class="btn btn-primary btn-sm"><span class='glyphicon glyphicon-plus'></span> Cadastrar</a>
                 </form>
 
+                <strong>Lista de Alunos relacionados a esse Responsável</strong><p/><br>
+
                 <table style="margin-left: auto; margin-right: auto; font-size: 13; width: auto !important;" class="table">
                     <tbody>
                         <tr id='row-1'><td>Aluno</td><td> na 1º Série </td>
@@ -104,12 +118,35 @@
                     <div class="modal-body">
                         <table style="font-size: 13px; width: 100%;" class="table hover" id="tableAlunos">
                             <thead>
-                            <tr>
-                                <td>Nome</td><td></td>
-                            </tr>
+                                <tr>
+                                    <td>Nome</td><td></td>
+                                </tr>
                             </thead>
                             <tbody>
-                            {ALUNOS}
+                                <tr>
+                                    <td>Ana Julia (1º Série )</td>
+                                    <td><button class='btn badge badge-primary escolher_aluno' style='padding: 2px 8px; color: white;' value='2' id='Ana Julia (1º Série )' data-dismiss='modal' >Escolher</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Ernesto Augusto (2º Série )</td>
+                                    <td><button class='btn badge badge-primary escolher_aluno' style='padding: 2px 8px; color: white;' value='4' id='Ernesto Augusto (2º Série )' data-dismiss='modal' >Escolher</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Fabio Montanha (2º Série )</td>
+                                    <td><button class='btn badge badge-primary escolher_aluno' style='padding: 2px 8px; color: white;' value='1' id='Fabio Montanha (2º Série )' data-dismiss='modal' >Escolher</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Fabricio Alves (2º Série )</td>
+                                    <td><button class='btn badge badge-primary escolher_aluno' style='padding: 2px 8px; color: white;' value='6' id='Fabricio Alves (2º Série )' data-dismiss='modal' >Escolher</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Francisco Evandro (2º Série )</td>
+                                    <td><button class='btn badge badge-primary escolher_aluno' style='padding: 2px 8px; color: white;' value='3' id='Francisco Evandro (2º Série )' data-dismiss='modal' >Escolher</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Maria Juliana (1º Série )</td>
+                                    <td><button class='btn badge badge-primary escolher_aluno' style='padding: 2px 8px; color: white;' value='5' id='Maria Juliana (1º Série )' data-dismiss='modal' >Escolher</button></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -122,6 +159,8 @@
 
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>	
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+        <script type="application/json" charset="utf8" src="https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"></script>'
     </body>
 </html>
